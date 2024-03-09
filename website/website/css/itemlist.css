@@ -1,0 +1,27 @@
+#itemlist {
+    box-shadow: 0.1rem 0.1rem 1.5rem rgba(0, 0, 0, 0.3);
+    border-radius: 0.25rem;
+
+}
+#itemname{
+    border-top: 1px solid grey;
+    
+}
+
+.row{
+  margin-right: 0;
+  margin-left: 0;
+}
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+  
+  }
+  .itemimgpad{
+    margin-top: 15%;
+  }
+  .itembookmark{
+    align-items: center;
+  }

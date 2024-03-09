@@ -1,0 +1,65 @@
+ #textborder{
+    border: 3px solid black;
+    padding: 10px;
+    border-radius: 50px;
+    margin: 20px;
+    background-color: aliceblue;
+    align-self: center;
+    }
+
+#textmid{
+    text-align: center;
+    color: black;
+}
+.texttop{
+    border-bottom: 3px solid black;
+    color: black;
+    text-align: center;
+}
+
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+  
+  }
+  .button-01{
+    background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    color: white;
+  }
+  .button-01:hover{
+    background-image: none;
+    color: black;
+  }
+
+  .button-01:not([disabled]):active {
+    background-color: blue;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    color: white;
+
+  }
+  .chat-button{
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    border-radius: 50%;
+    border: none;
+    padding: 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 30px;
+    background: url(chatbot.png);
+    background-size: 100%;
+    background-color: grey;
+
+  }
+  .chat-button:hover{
+
+    background-color: greenyellow;
+
+  }
