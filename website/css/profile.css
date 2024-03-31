@@ -1,0 +1,43 @@
+
+#profilesave{
+  background-color: grey;
+  color: antiquewhite;
+  margin-top: 5%;
+  margin-left: 92%;
+}
+.rightpos{
+  margin-left: 75%; 
+  position:flex;
+
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+  
+  }
+
+  
+.imagecircle{
+    border-radius:50% 50% 50% 50%;  
+    width:200px;
+    height:200px;
+    margin-top: 20%;
+}
+.profilecard{
+    border: -25%;
+    box-shadow: 0.1rem 0.1rem 1.5rem rgba(0, 0, 0, 0.3);
+    border-radius: 0.25rem;
+    height: 100vh;
+    display: flex;
+
+}
+.profilecardinfo{
+  margin-bottom: 60%;
+}
+.row{
+    margin-right: 0;
+    margin-left: 0;
+  }

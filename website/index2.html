@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Dashboard</title>
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/carousell.css" rel="stylesheet" />
+        <link href="css/preloader.css" rel="stylesheet" />
+        <link href="css/index2.css" rel="stylesheet" />
+        <link href="css/chatbot.css" rel="stylesheet" />
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    </head>
+    <body class="sb-nav-fixed">
+        <div id="preloader"></div> <!-- preloader div for preloading-->
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <!-- Navbar Brand-->
+            <a class="navbar-brand ps-3" href="index2.html">My Logo</a>
+            <!-- Sidebar Toggle-->
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+            <!-- Navbar Search-->
+            <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" id="searchtext" />
+                    <button class="btn btn-primary" id="btnNavbarSearch" type="button" onclick="saveValue()"><i class="fas fa-search"></i></button>
+                </div>
+            </form>
+            <!-- Navbar-->
+            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="profilepage.html">Settings</a></li>
+                        <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="index.html">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading">Core</div>
+                            <a class="nav-link" href="index2.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Dashboard
+                            </a>
+                            <div class="sb-sidenav-menu-heading">Stock Management</div>
+                            <a class="nav-link" href="bookmark.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                Bookmarks
+                            </a>
+                            <a class="nav-link" href="#">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Inventory
+                            </a>
+
+
+                            <div class="sb-sidenav-menu-heading">Fund Management</div>
+                            <a class="nav-link" href="paymentpage.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                Topup
+                            </a>
+                            <a class="nav-link" href="#">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Withdrawal
+                            </a>
+                            <a class="nav-link" href="#">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Transaction Details
+                            </a>
+
+
+
+                            <div class="sb-sidenav-menu-heading">Others</div>
+                            <a class="nav-link" href="#">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                About us/FAQ
+                            </a>
+                        </div>
+                    </div>
+                    <div class="sb-sidenav-footer">
+                        <div class="small">Logged in as:</div>
+                        Start Bootstrap
+                    </div>
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">Dashboard</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active">Dashboard</li>
+                        </ol>
+                        <div class="row">
+                            <div class="col-md-8" ><!-- color to see grid layout-->
+                              <div class="row"><!-- color to see grid layout-->
+                                <div class="col-xl-12 col-md-12">
+                                    <div class="card bg-warning text-white mb-12">
+                                        <div class="card-body">Account Stats</div>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div id="textborder">
+                                                    <h4 class="texttop"id="textmid" >Account Value</h2>
+                                                    <h2 id="textmid">$5000</h2>   
+                                                </div>
+
+                                            </div>
+                                            <div class="col-md-4" >
+                                                <div id="textborder">
+                                                    <h4 class="texttop" id="textmid">Total stock price</h2>
+                                                    <h2 id="textmid">$5000</h2>   
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div id="textborder">
+                                                    <h4 class="texttop" id="textmid">Account Balance</h2>
+                                                    <h2 id="textmid">$5000</h2>   
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer justify-content-between">
+                                            <div class="row">
+
+                                                
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-xl-6 col-md-6">
+                                    <div class="card mb-4">
+                                        <div class="card-header">
+                                            <i class="fas fa-chart-area me-1"></i>
+                                            Area Chart Example
+                                        </div>
+                                        <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-md-6">
+                                    <div class="card mb-4">
+                                        <div class="card-header">
+                                            <i class="fas fa-chart-bar me-1"></i>
+                                            Bar Chart Example
+                                        </div>
+                                        <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="col-md-4" style="height:250px;background-color:none"><!-- color to see grid layout-->
+                                <div class="card mb-2">
+                                    <div class="card-header">
+                                        <i class="fas fa-table me-1"></i>
+                                        DataTable Example
+                                    </div>
+                                    <div class="card-body">
+                                        <table id="datatablesSimple">
+                                            <thead>
+                                                <tr>
+                                                    <th>Amount</th>
+                                                </tr>
+                                            </thead>
+                                            <tfoot>
+                                                <tr>
+                                                    <th>Amount</th>
+                                                </tr>
+                                            </tfoot>
+                                            <tbody>
+                                                <tr>
+                                                    <td>$320,800</td>
+                                                </tr>
+        
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                        
+                            </div>
+                        </div>
+                        
+
+                        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <div class="card">
+                                    <img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title 1</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                                            card's content.</p>
+                                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="carousel-item">
+                                <div class="card">
+                                    <img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title 2</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                                            card's content.</p>
+                                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="carousel-item">
+                                <div class="card">
+                                    <img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title 3</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                                            card's content.</p>
+                                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="carousel-item">
+                                <div class="card">
+                                    <img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title 4</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                                            card's content.</p>
+                                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Next</span>
+                            </button>
+                          </div>
+                </main>
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; Your Website 2023</div>
+                            <div>
+                                <a href="#">Privacy Policy</a>
+                                &middot;
+                                <a href="#">Terms &amp; Conditions</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+         <button class="chat-button" onclick="openchatForm()"></button>
+
+                        <section class="msger">
+                            <header class="msger-header">
+                            <div class="msger-header-title">
+                                <i class="fas fa-comment-alt"></i> SimpleChat
+                            </div>
+                            <div class="msger-header-options">
+                                <button onclick="closechatForm()" >X</button>
+                            </div>
+                            </header>
+                        
+                            <main class="msger-chat">
+                            <div class="msg left-msg">
+                                <div
+                                class="msg-img"
+                                style="background-image: url(https://image.flaticon.com/icons/svg/327/327779.svg)"
+                                ></div>
+                        
+                                <div class="msg-bubble">
+                                <div class="msg-info">
+                                    <div class="msg-info-name">BOT</div>
+                                    <div class="msg-info-time">12:45</div>
+                                </div>
+                        
+                                <div class="msg-text">
+                                    Hi, welcome to SimpleChat! Go ahead and send me a message. 😄
+                                </div>
+                                </div>
+                            </div>
+                        
+
+                            </main>
+                        
+                            <form class="msger-inputarea">
+                            <input type="text" class="msger-input" placeholder="Enter your message...">
+                            <button type="submit" class="msger-send-btn">Send</button>
+                            </form>
+                        </section>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+        <script src='https://use.fontawesome.com/releases/v5.0.13/js/all.js'></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="assets/demo/chart-area-demo.js"></script>
+        <script src="assets/demo/chart-bar-demo.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
+        <script src="js/datatables-simple-demo.js"></script>
+        <script src="js/carousell.js"></script>
+        <script src="js/preloader.js"></script>
+        <script src="js/chatbot.js"></script>
+        <script src="js/savesearchvalue.js"></script>
+    </body>
+</html>

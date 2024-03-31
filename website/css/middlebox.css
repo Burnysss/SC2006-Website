@@ -1,0 +1,8 @@
+#paymentbox{
+    background-color: white; 
+    margin-top: 10%;
+    border: 1px solid black;
+    box-shadow: 0.1rem 0.1rem 1.5rem rgba(0, 0, 0, 0.3);
+    border-radius: 0.25rem;
+
+}
