@@ -27,14 +27,14 @@
   }
 
 
-  #hearts {
+  .hearts {
     font-size: 24px;
     background-color: transparent;
     border: none;
     cursor: pointer;
 }
 /* Red color for button when clicked */
-#hearts:focus {
+.hearts:focus {
     color: red;
 }
 
