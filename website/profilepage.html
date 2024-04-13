@@ -51,15 +51,15 @@
 
                                     <img class="imagecircle" src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com">
                                     <div class="profilecardinfo">
-                                        <h1>John Doe</h1>
-                                        <h4>email@email.com</h2>                                        
+                                        <h1 id="flname">John Doe</h1>
+                                        <h4 id="emaillocal">email@email.com</h2>                                        
                                     </div>
 
                             </div>
                             <div class="col-xl-6 ">
                                 <div class="card bg-secondary shadow">
                                   <div class="card-body" >
-                                    <form>
+                
                                         <div class="card-header bg-white border-0">
                                             <div class="row align-items-center">
                                                 <div class="col-8 accspace">
@@ -75,34 +75,33 @@
 
                                           <div class="col-lg-12">
                                             <div class="form-group focused">
-                                              <label class="form-control-label" for="input-username">Username</label>
+                                              <label class="form-control-label" for="input-username" >Username</label>
                                               <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Username" >
                                             </div>
                                           </div>
                                           <div class="col-lg-12">
                                             <div class="form-group">
-                                              <label class="form-control-label" for="input-email">Email address</label>
-                                              <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="email@example.com">
+                                              <label class="form-control-label" for="input-email" >Email address</label>
+                                              <input type="email" id="input-email" class="form-control form-control-alternative" id="inputemail" placeholder="email@example.com">
                                             </div>
                                           </div>
 
 
                                           <div class="col-lg-12">
                                             <div class="form-group focused">
-                                              <label class="form-control-label" for="input-first-name">First name</label>
+                                              <label class="form-control-label" for="input-first-name" >First name</label>
                                               <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="First name" >
                                             </div>
                                           </div>
                                           <div class="col-lg-12">
                                             <div class="form-group focused">
-                                              <label class="form-control-label" for="input-last-name">Last name</label>
-                                              <input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name" >
+                                              <label class="form-control-label" for="input-last-name" >Last name</label>
+                                              <input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name"  >
                                             </div>
                                           </div>
                                           <button id="profilesave">SAVE</button>
 
                                       </div>
-                                    </form>
                                   </div>
                                 </div>
                               </div>
@@ -137,5 +136,58 @@
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
         <script src="js/preloader.js"></script>
+        <script src="js/profilepage.js"></script>
+        <script type="module">
+          import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+          import { getDatabase, ref, push, set, get, child, query, equalTo, update} from "https://www.gstatic.com/firebasejs/10.10.0/firebase-database.js";
+  
+      
+          const firebaseConfig = {
+            apiKey: "AIzaSyBaIcbLT6CAYNocye-nxIYNE_a8BLH9WlI",
+            authDomain: "fir-v10-58c15.firebaseapp.com",
+            databaseURL: "https://fir-v10-58c15-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "fir-v10-58c15",
+            storageBucket: "fir-v10-58c15.appspot.com",
+            messagingSenderId: "339697362250",
+            appId: "1:339697362250:web:2d99277453f1b10c674db3"
+          };
+      
+          const app = initializeApp(firebaseConfig);
+          const db = getDatabase();
+      
+  
+          let pfpSave = document.getElementById("profilesave");
+          
+          var storedusername = localStorage.getItem("username");
+          console.log(storedusername);
+      
+          function updateUserData(fname,lname) {
+          const refdb = ref(db);
+  
+          update(ref(db,"users/" + storedusername), {
+            fname: fname,
+            lname: lname
+        }).then(() => {
+            alert("update success");
+            localStorage.setItem("fname", fname);
+            localStorage.setItem("lname", lname);
+
+        }).catch((error) => {
+            console.error("Error writing data: ", error);
+        });
+      }
+  
+      pfpSave.addEventListener('click', function() {
+
+          let firstname = document.getElementById("input-first-name");
+          let lastname = document.getElementById("input-last-name");
+          console.log(firstname.v);
+          console.log(lastname);
+          let fname = firstname.value;
+          let lname = lastname.value;
+          updateUserData(fname,lname);
+      });
+  
+      </script>
     </body>
 </html>
